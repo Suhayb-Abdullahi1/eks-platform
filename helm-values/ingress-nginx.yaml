@@ -1,0 +1,9 @@
+controller:
+  replicaCount: 2
+  service:
+    annotations:
+      # Network Load Balancer instead of the legacy Classic LB
+      service.beta.kubernetes.io/aws-load-balancer-type: nlb
+  metrics:
+    # Expose metrics now so Prometheus can scrape ingress traffic later
+    enabled: true
